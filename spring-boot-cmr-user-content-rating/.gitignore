@@ -1,0 +1,4 @@
+.settings/
+.mvn/
+target/
+*.db
