@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: spring-boot-telstra-gateway-application
+server:
+  port: 9016
+
+eureka:
+  client:
+    region : default
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:9015/eureka}
+  instance:
+    preferIpAddress: true    
+    
+zuul:
+  routes:
+  #=======================================
+    user-contentrating-service: 
+      url: http://localhost:9013
+      path: /user/contentrating/**  
+  #=======================================
+    user-service:
+      url: http://localhost:9011
+      path: /user/**  
+  #=======================================
+    content-service:
+      url: http://localhost:9012
+      path: /content/**
+  #=======================================
+    contentrating-service:
+      url: http://localhost:9014
+      path: /contentrating/**
+  #=======================================
+    discovery:
+      url: http://localhost:9015
+      path: /discovery/**
+    
+logging:
+  level:
+ #   org.springframework.web.: debug
+    org.springframework.cloud.netflix.zuul: debug
+            

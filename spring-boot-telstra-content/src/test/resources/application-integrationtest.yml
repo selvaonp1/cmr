@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: content-service
+server:
+  port: 0
+
+eureka:
+  client:
+    enabled: false

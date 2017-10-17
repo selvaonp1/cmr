@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.telstra.boot</groupId>
+	<artifactId>spring-boot-telstra-user-content-rating</artifactId>
+	<version>1.0</version>
+	<name>Spring Boot Data User Content Rating rest service app</name>
+	<description>Spring Boot Data User Content Rating rest service app</description>
+
+	<parent>
+		<groupId>org.telstra.spring</groupId>
+		<artifactId>org.telstra.CMR</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<properties>
+		<start-class>com.telstra.cloud.UserContentRatingApplication</start-class>
+	</properties>
+	<dependencies>
+		<!-- Compile -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<version>${spring-cloud-starter-version-m2}</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>${sqlite-jdbc-version}</version>
+		</dependency>
+		<!--Run command 'mvn install:install-file -Dfile=./src/main/resources/sqlite-dialect-0.1.0.jar' 
+			in project root folder, for sqlite-dialetc dependency. -->
+		<dependency>
+			<groupId>org.hibernate.dialect</groupId>
+			<artifactId>sqlite-dialect</artifactId>
+			<version>${sqlite-dialect-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-spring-service-connector</artifactId>
+			<version>${spring-cloud-cloudfoundry-connector-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<version>${spring-cloud-starter-version-m2}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+			<version>${spring-cloud-starter-version-m2}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<scope>test</scope>
+			<version>${spring-cloud-starter-version-m2}</version>
+		</dependency>
+
+		<!-- If app needs to be deployed on Cloud Foundry, add the following -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-cloudfoundry-connector</artifactId>
+			<version>${spring-cloud-cloudfoundry-connector-version}</version>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>
