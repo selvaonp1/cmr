@@ -1,10 +1,11 @@
 ## Project Setup
-```sh proj.basedir > mvn install:install-file -Dfile=./spring-boot-project-user/src/main/resources/sqlite-dialect-0.1.0.jar 
+```sh 
+proj.basedir > mvn install:install-file -Dfile=./spring-boot-project-user/src/main/resources/sqlite-dialect-0.1.0.jar 
 proj.basedir > mvn clean install (or) mvn clean install -DskipTests
 proj.basedir > cd spring-boot-project-user
 proj.basedir/spring-boot-project-user > mvn exec:java
 ```
- repeat steps 3 and 4 for each projects described below
+  repeat steps 3 and 4 for each projects in a new terminal
 
 ## List of services in the project:
 
