@@ -33,14 +33,12 @@ public class ContentRatingServiceImpl implements ContentRatingService {
 					.map(p -> new ContentRating(p.getUserName(), p.getContentType(), p.getContentId(), p.getRating()))
 					.collect(Collectors.toList());
 		}
-
 		return ratingsList;
 	}
 
 	@Override
 	public ContentRating save(ContentRating contentRating) throws DuplicateRatingException {
 		String[] contentIds = new String[] { contentRating.getContentId() };
-				+ contentRating.getUserName() + " getContentType=" + contentRating.getContentType());
 		List<UserContentRatingModel> ratingsModelList = ratingsDao.getUserRatingsByUserNameAndContentTypeAndContentIdIn(
 				contentRating.getUserName(), contentRating.getContentType(), Arrays.asList(contentIds));
 		if (ratingsModelList == null || ratingsModelList.size() == 0) {

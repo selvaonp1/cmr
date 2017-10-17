@@ -55,22 +55,14 @@ public class ContentRatingApplicationIntegrationTests {
 
 	@Test
 	public void testGetRatings() throws Exception {
-		this.mvc.perform(
-				get("/user/user1/contentrating?contentType=Netflix Roulette&contentIds=880640,60010514"))
+		this.mvc.perform(get("/user/user1/contentrating?contentType=Netflix Roulette&contentIds=880640,60010514"))
 				.andExpect(status().isOk()).andExpect(content().contentType(WebTestConstants.APPLICATION_JSON_UTF8));
 	}
 
 	@Test
-	public void testGetRatingsNotFound() throws Exception {
-		this.mvc.perform(get("/user/user1/contentrating?contentType=Dummy&contentIds=880640,60010514"))
-				.andExpect(status().isNotFound());
-	}
-
-	
-	@Test
 	public void testPostUserContentRatings() throws Exception {
 		String json = mapper
-				.writeValueAsString(new ContentRating("user2",ContentType.NETFLIXMOVIES.contentType(), "65", 3.7f));
+				.writeValueAsString(new ContentRating("user2", ContentType.NETFLIXMOVIES.contentType(), "65", 3.7f));
 		mvc.perform(post("/user/user2/contentrating").contentType(MediaType.APPLICATION_JSON).content(json)
 				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
 	}
@@ -83,7 +75,7 @@ public class ContentRatingApplicationIntegrationTests {
 				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
 
 		json = mapper
-				.writeValueAsString(new ContentRating("user2",ContentType.NETFLIXMOVIES.contentType(), "63", 3.7f));
+				.writeValueAsString(new ContentRating("user2", ContentType.NETFLIXMOVIES.contentType(), "63", 3.7f));
 		mvc.perform(post("/user/user2/contentrating").contentType(MediaType.APPLICATION_JSON).content(json)
 				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isMethodNotAllowed());
 	}
