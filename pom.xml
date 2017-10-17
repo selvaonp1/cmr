@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.telstra.spring</groupId>
-	<artifactId>org.telstra.CMR</artifactId>
+	<groupId>org.cmr.spring</groupId>
+	<artifactId>org.cmr.springboot</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
@@ -23,12 +23,12 @@
 		<sqlite-jdbc-version>3.20.0</sqlite-jdbc-version>
 	</properties>
 	<modules>
-		<module>spring-boot-telstra-user</module>
-		<module>spring-boot-telstra-content</module>
-		<module>spring-boot-telstra-content-rating</module>
-		<module>spring-boot-telstra-user-content-rating</module>
-		<module>spring-boot-telstra-discovery</module>
-		<module>spring-boot-telstra-gateway</module>
+		<module>spring-boot-cmr-user</module>
+		<module>spring-boot-cmr-content</module>
+		<module>spring-boot-cmr-content-rating</module>
+		<module>spring-boot-cmr-user-content-rating</module>
+		<module>spring-boot-cmr-discovery</module>
+		<module>spring-boot-cmr-gateway</module>
 
 	</modules>
 	<build>
@@ -171,7 +171,7 @@
 						<configuration>
 							<name>maven.test.skip</name>
 							<value>${project.artifactId}</value>
-							<regex>(spring-boot-telstra-gateway)|(module3)</regex>
+							<regex>(spring-boot-cmr-gateway)|(module3)</regex>
 							<replacement>true</replacement>
 							<failIfNoMatch>false</failIfNoMatch>
 						</configuration>

@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: contentrating-service
-server:
-  port: 0
-
-eureka:
-  client:
-    enabled: false
