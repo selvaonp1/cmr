@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.telstra.cloud.gateway.cmr.CMRDiscoveryApplication</config>
+		<config>java:com.cmr.cloud.discovery.cmr.CMRDiscoveryApplication</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

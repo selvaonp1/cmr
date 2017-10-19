@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.telstra.cloud.ContentInformationApplication</config>
+		<config>java:com.cmr.cloud.ContentInformationApplication</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
