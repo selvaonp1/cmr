@@ -2,3 +2,5 @@
 .mvn/
 target/
 *.db
+.project
+.classpath
