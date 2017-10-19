@@ -2,3 +2,6 @@
 .mvn/
 target/
 *.db
+.project
+.classpath
+.flattened-pom.xml
